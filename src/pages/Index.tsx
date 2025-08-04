@@ -1,11 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Sidebar } from "@/components/Sidebar";
+import { Timeline } from "@/components/Timeline";
+import { TrendingTopics } from "@/components/TrendingTopics";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 p-4">
+          {/* 左侧边栏 */}
+          <div className="lg:col-span-1 lg:sticky lg:top-4 lg:h-fit">
+            <Sidebar />
+          </div>
+          
+          {/* 中间时间线 */}
+          <div className="lg:col-span-2">
+            <Timeline />
+          </div>
+          
+          {/* 右侧热门话题 */}
+          <div className="lg:col-span-1 lg:sticky lg:top-4 lg:h-fit">
+            <TrendingTopics />
+          </div>
+        </div>
       </div>
     </div>
   );
